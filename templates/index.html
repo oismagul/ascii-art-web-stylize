@@ -1,0 +1,67 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+
+<div class="top-container">
+    <button class="btn-moon" type="submit"><img src="/style/ai.png" style="width:40px"></button>
+    <!-- Левая тёмная карточка -->
+    <div class="panel panel-left">
+        <h2>Text to ASCII Art Generator:<br>Create ASCII Art from Text</h2>
+
+        <form action="/ascii-art" method="POST" class="ascii-form">
+
+            <label class="label-title">ASCII Art font:</label>
+            <select name="banner" class="select-banner">
+                <option value="standard" {{if eq .Banner "standard"}}selected{{end}}>Standard</option>
+                <option value="shadow" {{if eq .Banner "shadow"}}selected{{end}}>Shadow</option>
+                <option value="thinkertoy" {{if eq .Banner "thinkertoy"}}selected{{end}}>Thinkertoy</option>
+            </select>
+
+            <label class="label-title">Input text:</label>
+            <textarea name="text" class="input-text" placeholder="Type Something...">{{.InputText}}</textarea>
+
+            <button class="btn-generate" type="submit">Generate</button>
+
+            {{if .ErrorMsg}}
+            <h2></h2>
+            <div class="error">{{.ErrorMsg}}</div>
+            {{end}}
+
+        </form>
+    </div>
+
+</div>
+
+<!-- ASCII РЕЗУЛЬТАТ -->
+<div class="ascii-output-container">
+    <h3 id="output-header">Output</h3>
+    {{if .AsciiResult}}
+    <pre class="ascii-output">{{.AsciiResult}}</pre>
+    {{end}}
+    <div class="result-buttons">
+        <button class="btn">Copy</button>
+        <button class="btn">Save as image</button>
+        <button class="btn">Share</button>
+    </div>
+
+    <div class="filter-row">
+        <label>Filter:</label>
+        <select class="filter-select">
+            <option>None</option>
+            <option>Invert</option>
+            <option>Contrast</option>
+        </select>
+    </div>
+
+</div>
+
+</body>
+</html>
+{{end}}
