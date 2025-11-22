@@ -1,0 +1,24 @@
+{{define "error"}}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="/style/err.css">
+</head>
+
+<body class="error-body">
+
+<div class="error-container">
+    <div class="error-box">
+        <h1 class="error-code">{{.ErrorType}}</h1>
+        <p class="error-message">{{.ErrorMsg}}</p>
+
+        <a href="/" class="error-button">Back</a>
+    </div>
+</div>
+
+</body>
+</html>
+{{end}}
+
