@@ -1,0 +1,56 @@
+/* ========== СТРАНИЦА ОШИБКИ ========== */
+.error-body {
+    background: #2d2d53;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.error-box {
+    background: #4b438d;
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    text-align: center;
+    color: white;
+    width: 420px;
+}
+
+.error-code {
+    font-size: 60px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.error-message {
+    font-size: 18px;
+    margin: 15px 0 25px;
+}
+
+.error-button {
+    padding: 12px 25px;
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.error-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
